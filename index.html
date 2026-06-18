@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vyomaryx Aerospace — Autonomy for the contested edge</title>
+<meta name="description" content="Vyomaryx Aerospace builds AI/ML-driven autonomy for uncrewed aircraft — perception, navigation, and coordinated decision-making for the Indian armed forces." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#FFFFFF',
+          'paper-2': '#F5F4F1',
+          ink: '#16130E',
+          'ink-soft': '#4A453B',
+          line: '#E3E1DC',
+          signal: '#6E6B41',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          sans: ['"IBM Plex Sans"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { background-color:#FFFFFF; color:#16130E; font-family:"IBM Plex Sans",sans-serif; -webkit-font-smoothing:antialiased; }
+  .eyebrow { font-family:"IBM Plex Mono",monospace; letter-spacing:0.18em; text-transform:uppercase; font-size:0.7rem; }
+  .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .link-underline { background-image:linear-gradient(#6E6B41,#6E6B41); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease; }
+  .link-underline:hover { background-size:100% 1px; }
+  .trace { stroke-dasharray:1; stroke-dashoffset:1; animation:draw 4.5s ease-in-out forwards; }
+  @keyframes draw { to { stroke-dashoffset:0; } }
+  .marker { offset-rotate:0deg; animation:fly 9s linear infinite; }
+  @keyframes fly { 0%{offset-distance:0%;} 100%{offset-distance:100%;} }
+  .grid-bg { background-image:linear-gradient(#ECEBE7 1px,transparent 1px),linear-gradient(90deg,#ECEBE7 1px,transparent 1px); background-size:38px 38px; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .trace{animation:none;stroke-dashoffset:0;}
+    .marker{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+  ::selection{ background:#6E6B41; color:#F5F4F1; }
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 56'%3E%3Cline x1='0' y1='20' x2='20' y2='20' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='20' y1='20' x2='36' y2='48' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='36' y1='48' x2='52' y2='20' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='52' y1='20' x2='64' y2='10' stroke='%237A9E7E' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='64' y1='10' x2='72' y2='20' stroke='%237A9E7E' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='36' cy='48' r='4' fill='%237A9E7E'/%3E%3C/svg%3E" />
+</head>
+<body class="font-sans antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-paper/85 backdrop-blur-md border-b border-line">
+  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-center gap-3 group" aria-label="Vyomaryx Aerospace — home">
+      <span style="display:block;width:52px;height:36px;flex-shrink:0;transition:opacity .3s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56" fill="none" aria-hidden="true" focusable="false">
+  <line x1="0"  y1="20" x2="20" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="20" y1="20" x2="36" y2="48" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="36" y1="48" x2="52" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="52" y1="20" x2="64" y2="10" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="64" y1="10" x2="72" y2="20" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="72" y1="20" x2="80" y2="20" stroke="#7A9E7E" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
+  <circle cx="36" cy="48" r="3.5" fill="#7A9E7E"/>
+</svg></span>
+      <span class="flex flex-col leading-none">
+        <span class="font-display tracking-tight text-[15px] text-ink" style="font-weight:700;letter-spacing:-0.03em;">VYOMARYX</span>
+        <span class="eyebrow text-[9px] text-ink-soft mt-0.5">AEROSPACE</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-9">
+      <a href="index.html" class="eyebrow text-ink relative" aria-current="page">Home</a>
+      <a href="services.html" class="eyebrow text-ink-soft hover:text-ink transition-colors">Capabilities</a>
+      <a href="about.html" class="eyebrow text-ink-soft hover:text-ink transition-colors">About</a>
+      <a href="contact.html" class="eyebrow inline-flex items-center gap-2 border border-ink px-4 py-2 text-ink hover:bg-ink hover:text-paper transition-colors duration-300">Contact</a>
+    </div>
+    <button id="navToggle" class="md:hidden w-10 h-10 -mr-2 flex flex-col items-center justify-center gap-[5px]" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center"></span>
+      <span class="block w-6 h-px bg-ink transition-all duration-300"></span>
+      <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center"></span>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-line bg-paper">
+    <div class="px-5 py-4 flex flex-col gap-1">
+      <a href="index.html" class="eyebrow py-3 text-ink border-b border-line/60">Home</a>
+      <a href="services.html" class="eyebrow py-3 text-ink-soft border-b border-line/60">Capabilities</a>
+      <a href="about.html" class="eyebrow py-3 text-ink-soft border-b border-line/60">About</a>
+      <a href="contact.html" class="eyebrow py-3 text-ink-soft">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="relative pt-28 sm:pt-36 pb-20 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-[0.5] pointer-events-none [mask-image:radial-gradient(ellipse_at_70%_30%,black,transparent_75%)]"></div>
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <p class="eyebrow text-signal mb-6 flex items-center gap-3">
+        <span class="inline-block w-2 h-2 rounded-full bg-signal"></span>
+        Deep-tech autonomy · Indian armed forces
+      </p>
+      <h1 class="font-display font-700 text-ink leading-[0.98] tracking-tight" style="font-weight:700;font-size:clamp(2.6rem,6.2vw,5.2rem);">
+        Autonomous systems<br>that think at<br>mission speed.
+      </h1>
+      <p class="mt-7 max-w-xl text-lg text-ink-soft leading-relaxed">
+        Vyomaryx builds AI/ML-driven autonomy for uncrewed aircraft — perception, navigation, and coordinated decision-making engineered for the Army, Navy, and Air Force.
+      </p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="services.html" class="group inline-flex items-center justify-center gap-3 bg-ink text-paper px-7 py-4 eyebrow hover:bg-signal transition-colors duration-300">
+          Explore capabilities
+          <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </a>
+        <a href="contact.html" class="inline-flex items-center justify-center gap-3 border border-ink px-7 py-4 eyebrow text-ink hover:bg-ink hover:text-paper transition-colors duration-300">
+          Talk to our team
+        </a>
+      </div>
+    </div>
+
+    <!-- Signature: telemetry instrument panel -->
+    <div class="lg:col-span-5 reveal">
+      <div class="border border-ink bg-paper-2/60 backdrop-blur-sm">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-line">
+          <span class="eyebrow text-ink-soft">VYX·MISSION TRACE</span>
+          <span class="eyebrow text-signal flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-signal animate-pulse"></span>LIVE</span>
+        </div>
+        <div class="relative">
+          <svg viewBox="0 0 400 300" class="w-full block" role="img" aria-label="Animated drone flight-path trace over a coordinate grid">
+            <defs>
+              <pattern id="hg" width="25" height="25" patternUnits="userSpaceOnUse">
+                <path d="M25 0 L0 0 0 25" fill="none" stroke="#E3E1DC" stroke-width="0.5"/>
+              </pattern>
+              <path id="route" d="M30 250 C 90 250, 100 120, 170 130 S 280 230, 300 150 S 350 50, 372 60" />
+            </defs>
+            <rect width="400" height="300" fill="url(#hg)"/>
+            <line x1="0" y1="60" x2="400" y2="60" stroke="#E3E1DC" stroke-width="0.5" stroke-dasharray="2 4"/>
+            <line x1="170" y1="0" x2="170" y2="300" stroke="#E3E1DC" stroke-width="0.5" stroke-dasharray="2 4"/>
+            <use href="#route" fill="none" stroke="#6E6B41" stroke-width="1.6" pathLength="1" class="trace"/>
+            <!-- waypoints -->
+            <g fill="#16130E">
+              <circle cx="30" cy="250" r="3"/><circle cx="170" cy="130" r="3"/>
+              <circle cx="300" cy="150" r="3"/><circle cx="372" cy="60" r="4" fill="#6E6B41"/>
+            </g>
+            <g class="marker" style="offset-path:path('M30 250 C 90 250, 100 120, 170 130 S 280 230, 300 150 S 350 50, 372 60');">
+              <path d="M-6 4 L0 -7 L6 4 L0 1 Z" fill="#16130E"/>
+            </g>
+            <text x="12" y="22" class="eyebrow" fill="#4A453B" font-size="8" font-family="IBM Plex Mono">ALT 1,240m</text>
+            <text x="300" y="290" class="eyebrow" fill="#4A453B" font-size="8" font-family="IBM Plex Mono">GPS-DENIED</text>
+          </svg>
+        </div>
+        <div class="grid grid-cols-3 border-t border-line divide-x divide-line">
+          <div class="px-4 py-3"><div class="eyebrow text-ink-soft text-[9px]">LAT</div><div class="font-mono text-sm text-ink">17.3850°N</div></div>
+          <div class="px-4 py-3"><div class="eyebrow text-ink-soft text-[9px]">LON</div><div class="font-mono text-sm text-ink">78.4867°E</div></div>
+          <div class="px-4 py-3"><div class="eyebrow text-ink-soft text-[9px]">NODES</div><div class="font-mono text-sm text-ink">04 / 04</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE GRID ============ -->
+<section class="border-y border-line bg-paper-2/40">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+    <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+      <h2 class="font-display font-600 text-ink leading-tight tracking-tight" style="font-weight:600;font-size:clamp(1.8rem,3.5vw,2.8rem);">What our autonomy delivers</h2>
+      <p class="eyebrow text-ink-soft max-w-xs">Built for environments where the network fails and the decision still has to be made.</p>
+    </div>
+    <div class="grid md:grid-cols-3 border-t border-line">
+      <article class="reveal group border-b md:border-b-0 md:border-r border-line p-7 lg:p-9 hover:bg-paper transition-colors duration-300">
+        <span class="eyebrow text-signal">Perception</span>
+        <h3 class="font-display font-600 text-2xl mt-4 mb-3 text-ink" style="font-weight:600;">Onboard sensing &amp; targeting</h3>
+        <p class="text-ink-soft leading-relaxed">Edge-deployed computer vision that detects, classifies, and tracks objects in cluttered, low-light, and GPS-denied conditions — no uplink required.</p>
+      </article>
+      <article class="reveal group border-b md:border-b-0 md:border-r border-line p-7 lg:p-9 hover:bg-paper transition-colors duration-300">
+        <span class="eyebrow text-signal">Autonomy</span>
+        <h3 class="font-display font-600 text-2xl mt-4 mb-3 text-ink" style="font-weight:600;">Navigation without the network</h3>
+        <p class="text-ink-soft leading-relaxed">Resilient guidance that holds course through jamming, signal loss, and contested airspace, falling back to visual and inertial cues in real time.</p>
+      </article>
+      <article class="reveal group p-7 lg:p-9 hover:bg-paper transition-colors duration-300">
+        <span class="eyebrow text-signal">Coordination</span>
+        <h3 class="font-display font-600 text-2xl mt-4 mb-3 text-ink" style="font-weight:600;">Swarm-scale decisions</h3>
+        <p class="text-ink-soft leading-relaxed">Distributed planning that lets many platforms act as one formation — reallocating tasks instantly when conditions or objectives shift.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+  <div class="reveal grid grid-cols-2 sm:grid-cols-4 border-t border-b border-line divide-x divide-line">
+    <div class="p-6 text-center"><div class="font-display text-3xl sm:text-4xl text-ink" style="font-weight:600;">0&nbsp;ms</div><div class="eyebrow text-ink-soft mt-2">Cloud dependency</div></div>
+    <div class="p-6 text-center"><div class="font-display text-3xl sm:text-4xl text-ink" style="font-weight:600;">24/7</div><div class="eyebrow text-ink-soft mt-2">Autonomous ops</div></div>
+    <div class="p-6 text-center"><div class="font-display text-3xl sm:text-4xl text-ink" style="font-weight:600;">3</div><div class="eyebrow text-ink-soft mt-2">Service branches</div></div>
+    <div class="p-6 text-center"><div class="font-display text-3xl sm:text-4xl text-ink" style="font-weight:600;">100%</div><div class="eyebrow text-ink-soft mt-2">Made in India</div></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT SUMMARY ============ -->
+<section class="border-t border-line bg-ink text-paper">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-5 reveal">
+      <span class="eyebrow text-signal">About Vyomaryx</span>
+      <h2 class="font-display font-600 leading-tight tracking-tight mt-5" style="font-weight:600;font-size:clamp(1.9rem,3.8vw,3rem);">Named for the sky. Built for what flies in it.</h2>
+    </div>
+    <div class="lg:col-span-7 reveal">
+      <p class="text-lg text-paper/80 leading-relaxed">
+        <span class="font-mono text-signal">Vyoma</span> — the Sanskrit word for sky and aether — is where our work lives. We are a deep-tech team of engineers and operators building the intelligence layer for uncrewed aerial systems, so that India's forces can deploy autonomy they own end to end.
+      </p>
+      <a href="about.html" class="link-underline inline-flex items-center gap-3 eyebrow text-paper mt-8 pb-1">
+        Read our story <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA STRIP ============ -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-24 text-center reveal">
+  <h2 class="font-display font-700 text-ink leading-tight tracking-tight" style="font-weight:700;font-size:clamp(2rem,4.6vw,3.4rem);">Let's discuss your mission.</h2>
+  <p class="text-ink-soft mt-5 max-w-xl mx-auto">Briefings, capability demonstrations, and integration discussions — start a secure conversation with our team.</p>
+  <a href="contact.html" class="group inline-flex items-center gap-3 bg-ink text-paper px-8 py-4 eyebrow mt-9 hover:bg-signal transition-colors duration-300">
+    Contact Vyomaryx <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+  </a>
+</section>
+</main>
+
+<!-- ============ FOOTER (placeholder included via JS) ============ -->
+<div id="site-footer"></div>
+
+<script src="site.js"></script>
+</body>
+</html>

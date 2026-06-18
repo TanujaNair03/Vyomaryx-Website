@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Vyomaryx Aerospace</title>
+<meta name="description" content="The story, mission, and team behind Vyomaryx Aerospace — deep-tech autonomy for the Indian armed forces." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { paper:'#FFFFFF','paper-2':'#F5F4F1', ink:'#16130E','ink-soft':'#4A453B', line:'#E3E1DC', signal:'#6E6B41' },
+    fontFamily: { display:['"Space Grotesk"','sans-serif'], sans:['"IBM Plex Sans"','sans-serif'], mono:['"IBM Plex Mono"','monospace'] },
+  } } };
+</script>
+<style>
+  body { background-color:#FFFFFF; color:#16130E; font-family:"IBM Plex Sans",sans-serif; -webkit-font-smoothing:antialiased; }
+  .eyebrow { font-family:"IBM Plex Mono",monospace; letter-spacing:0.18em; text-transform:uppercase; font-size:0.7rem; }
+  .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .link-underline { background-image:linear-gradient(#6E6B41,#6E6B41); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease; }
+  .link-underline:hover { background-size:100% 1px; }
+  .grid-bg { background-image:linear-gradient(#ECEBE7 1px,transparent 1px),linear-gradient(90deg,#ECEBE7 1px,transparent 1px); background-size:38px 38px; }
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} html{scroll-behavior:auto;} }
+  ::selection{ background:#6E6B41; color:#F5F4F1; }
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 56'%3E%3Cline x1='0' y1='20' x2='20' y2='20' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='20' y1='20' x2='36' y2='48' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='36' y1='48' x2='52' y2='20' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='52' y1='20' x2='64' y2='10' stroke='%237A9E7E' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='64' y1='10' x2='72' y2='20' stroke='%237A9E7E' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='36' cy='48' r='4' fill='%237A9E7E'/%3E%3C/svg%3E" />
+</head>
+<body class="font-sans antialiased">
+
+<header class="fixed top-0 inset-x-0 z-50 bg-paper/85 backdrop-blur-md border-b border-line">
+  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-center gap-3 group" aria-label="Vyomaryx Aerospace — home">
+      <span style="display:block;width:52px;height:36px;flex-shrink:0;transition:opacity .3s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56" fill="none" aria-hidden="true" focusable="false">
+  <line x1="0"  y1="20" x2="20" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="20" y1="20" x2="36" y2="48" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="36" y1="48" x2="52" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="52" y1="20" x2="64" y2="10" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="64" y1="10" x2="72" y2="20" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="72" y1="20" x2="80" y2="20" stroke="#7A9E7E" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
+  <circle cx="36" cy="48" r="3.5" fill="#7A9E7E"/>
+</svg></span>
+      <span class="flex flex-col leading-none">
+        <span class="font-display tracking-tight text-[15px] text-ink" style="font-weight:700;letter-spacing:-0.03em;">VYOMARYX</span>
+        <span class="eyebrow text-[9px] text-ink-soft mt-0.5">AEROSPACE</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-9">
+      <a href="index.html" class="eyebrow text-ink-soft hover:text-ink transition-colors">Home</a>
+      <a href="services.html" class="eyebrow text-ink-soft hover:text-ink transition-colors">Capabilities</a>
+      <a href="about.html" class="eyebrow text-ink" aria-current="page">About</a>
+      <a href="contact.html" class="eyebrow inline-flex items-center gap-2 border border-ink px-4 py-2 text-ink hover:bg-ink hover:text-paper transition-colors duration-300">Contact</a>
+    </div>
+    <button id="navToggle" class="md:hidden w-10 h-10 -mr-2 flex flex-col items-center justify-center gap-[5px]" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center"></span><span class="block w-6 h-px bg-ink transition-all duration-300"></span><span class="block w-6 h-px bg-ink transition-all duration-300 origin-center"></span>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-line bg-paper">
+    <div class="px-5 py-4 flex flex-col gap-1">
+      <a href="index.html" class="eyebrow py-3 text-ink-soft border-b border-line/60">Home</a>
+      <a href="services.html" class="eyebrow py-3 text-ink-soft border-b border-line/60">Capabilities</a>
+      <a href="about.html" class="eyebrow py-3 text-ink border-b border-line/60">About</a>
+      <a href="contact.html" class="eyebrow py-3 text-ink-soft">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Header / mission statement -->
+<section class="relative pt-32 sm:pt-40 pb-16 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none [mask-image:linear-gradient(black,transparent)]"></div>
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-signal mb-6 flex items-center gap-3"><span class="inline-block w-2 h-2 rounded-full bg-signal"></span>About Vyomaryx</p>
+    <h1 class="font-display text-ink leading-[1.0] tracking-tight max-w-5xl" style="font-weight:700;font-size:clamp(2.2rem,5vw,4.4rem);">
+      We build the intelligence that lets machines fly the mission so people don't have to.
+    </h1>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-12 gap-10 lg:gap-16">
+    <div class="lg:col-span-4 reveal">
+      <span class="eyebrow text-signal">Our story</span>
+    </div>
+    <div class="lg:col-span-8 reveal space-y-6 text-lg text-ink-soft leading-relaxed">
+      <p><span class="font-mono text-signal text-base">Vyoma</span> — व्योम — is the Sanskrit word for the sky, the open expanse where everything we make belongs. Vyomaryx began with a simple conviction: that India's forces should operate autonomy they fully own, understand, and control — not black boxes shipped from somewhere else.</p>
+      <p>We started as a small group of perception researchers, flight-controls engineers, and former operators frustrated by the same gap. Drones could fly, but they couldn't <em class="text-ink not-italic font-medium">think</em> — the moment a link dropped or a signal was jammed, the mission stalled. So we set out to move the intelligence onto the aircraft itself.</p>
+      <p>Today we build the autonomy layer for uncrewed aerial systems: perception, navigation, and coordination that work at the edge, in the conditions that matter, sovereign by design.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Mission / principles -->
+<section class="border-t border-line bg-paper-2/40">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+    <h2 class="reveal font-display text-ink tracking-tight mb-12" style="font-weight:600;font-size:clamp(1.6rem,3vw,2.4rem);">What we hold to</h2>
+    <div class="grid md:grid-cols-3 border-t border-line">
+      <div class="reveal p-7 lg:p-9 border-b md:border-b-0 md:border-r border-line">
+        <span class="eyebrow text-signal">Principle</span>
+        <h3 class="font-display text-2xl text-ink mt-4 mb-3" style="font-weight:600;">Sovereign by design</h3>
+        <p class="text-ink-soft leading-relaxed">Built, trained, and maintained in India. No dependency you can't audit, and nothing you can't run on your own.</p>
+      </div>
+      <div class="reveal p-7 lg:p-9 border-b md:border-b-0 md:border-r border-line">
+        <span class="eyebrow text-signal">Principle</span>
+        <h3 class="font-display text-2xl text-ink mt-4 mb-3" style="font-weight:600;">Autonomy under pressure</h3>
+        <p class="text-ink-soft leading-relaxed">We test for the hard day — jamming, signal loss, degraded sensors — because that is when autonomy earns its place.</p>
+      </div>
+      <div class="reveal p-7 lg:p-9">
+        <span class="eyebrow text-signal">Principle</span>
+        <h3 class="font-display text-2xl text-ink mt-4 mb-3" style="font-weight:600;">Operators first</h3>
+        <p class="text-ink-soft leading-relaxed">The people who fly the mission shape what we ship. Field feedback is a design input, not an afterthought.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+    <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+      <h2 class="font-display text-ink tracking-tight" style="font-weight:600;font-size:clamp(1.6rem,3vw,2.4rem);">The team</h2>
+      <p class="eyebrow text-ink-soft max-w-xs">Engineers, researchers, and operators working on the same problem.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 border-t border-l border-line">
+      <div class="reveal group border-r border-b border-line p-8 hover:bg-paper-2/60 transition-colors duration-300">
+        <div class="w-16 h-16 rounded-full border border-ink flex items-center justify-center font-mono text-ink group-hover:bg-ink group-hover:text-paper transition-colors duration-300">RN</div>
+        <h3 class="font-display text-2xl text-ink mt-5" style="font-weight:600;">Lt Col RR Nair</h3>
+        <p class="eyebrow text-signal mt-2">Founder &amp; Director</p>
+        <p class="text-sm text-ink-soft mt-4 leading-relaxed">Twenty years in the Indian Army's Corps of Engineers, with operational service across some of India's most demanding theatres. A further two decades in senior leadership roles at global organisations including Renault Nissan and Daiki Aluminium Industry. He co-founded Vyomaryx to bring operational credibility and leadership experience to Indian defence-tech.</p>
+      </div>
+      <div class="reveal group border-r border-b border-line p-8 hover:bg-paper-2/60 transition-colors duration-300">
+        <div class="w-16 h-16 rounded-full border border-ink flex items-center justify-center font-mono text-ink group-hover:bg-ink group-hover:text-paper transition-colors duration-300">TN</div>
+        <h3 class="font-display text-2xl text-ink mt-5" style="font-weight:600;">Tanuja Nair</h3>
+        <p class="eyebrow text-signal mt-2">Founder &amp; Director</p>
+        <p class="text-sm text-ink-soft mt-4 leading-relaxed">Graduate of IIT Madras with two years of experience in data science and machine learning. At Vyomaryx, she leads the AI/ML research direction — translating complex autonomy problems into buildable technical solutions. Co-founded Vyomaryx to build Indian AI for Indian defence, from the ground up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="border-t border-line max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-24 text-center reveal">
+  <h2 class="font-display text-ink leading-tight tracking-tight" style="font-weight:700;font-size:clamp(1.9rem,4.4vw,3.2rem);">Build the sky layer with us.</h2>
+  <p class="text-ink-soft mt-5 max-w-xl mx-auto">Whether you're evaluating autonomy or hiring for it, we'd like to hear from you.</p>
+  <a href="contact.html" class="group inline-flex items-center gap-3 bg-ink text-paper px-8 py-4 eyebrow mt-9 hover:bg-signal transition-colors duration-300">Get in touch <span class="transition-transform duration-300 group-hover:translate-x-1">→</span></a>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="site.js"></script>
+</body>
+</html>

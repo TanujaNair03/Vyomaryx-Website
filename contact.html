@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Vyomaryx Aerospace</title>
+<meta name="description" content="Contact Vyomaryx Aerospace for capability briefings, partnerships, procurement, and careers." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { paper:'#FFFFFF','paper-2':'#F5F4F1', ink:'#16130E','ink-soft':'#4A453B', line:'#E3E1DC', signal:'#6E6B41' },
+    fontFamily: { display:['"Space Grotesk"','sans-serif'], sans:['"IBM Plex Sans"','sans-serif'], mono:['"IBM Plex Mono"','monospace'] },
+  } } };
+</script>
+<style>
+  body { background-color:#FFFFFF; color:#16130E; font-family:"IBM Plex Sans",sans-serif; -webkit-font-smoothing:antialiased; }
+  .eyebrow { font-family:"IBM Plex Mono",monospace; letter-spacing:0.18em; text-transform:uppercase; font-size:0.7rem; }
+  .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+  .grid-bg { background-image:linear-gradient(#ECEBE7 1px,transparent 1px),linear-gradient(90deg,#ECEBE7 1px,transparent 1px); background-size:38px 38px; }
+  .field { background:#F5F4F1; border:1px solid #E3E1DC; color:#16130E; transition:border-color .2s ease, box-shadow .2s ease; }
+  .field:focus { outline:none; border-color:#6E6B41; box-shadow:0 0 0 3px rgba(110,107,65,0.18); }
+  .field::placeholder { color:#9a917f; }
+  .map-frame { filter:grayscale(1) sepia(0.14) contrast(1.05) brightness(1.02); }
+  select.field { -webkit-appearance:none; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%2316130E' fill='none' stroke-width='1.4'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; }
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} html{scroll-behavior:auto;} }
+  ::selection{ background:#6E6B41; color:#F5F4F1; }
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 56'%3E%3Cline x1='0' y1='20' x2='20' y2='20' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='20' y1='20' x2='36' y2='48' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='36' y1='48' x2='52' y2='20' stroke='%231A1714' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='52' y1='20' x2='64' y2='10' stroke='%237A9E7E' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='64' y1='10' x2='72' y2='20' stroke='%237A9E7E' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='36' cy='48' r='4' fill='%237A9E7E'/%3E%3C/svg%3E" />
+</head>
+<body class="font-sans antialiased">
+
+<header class="fixed top-0 inset-x-0 z-50 bg-paper/85 backdrop-blur-md border-b border-line">
+  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="index.html" class="flex items-center gap-3 group" aria-label="Vyomaryx Aerospace — home">
+      <span style="display:block;width:52px;height:36px;flex-shrink:0;transition:opacity .3s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56" fill="none" aria-hidden="true" focusable="false">
+  <line x1="0"  y1="20" x2="20" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="20" y1="20" x2="36" y2="48" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="36" y1="48" x2="52" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="52" y1="20" x2="64" y2="10" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="64" y1="10" x2="72" y2="20" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/>
+  <line x1="72" y1="20" x2="80" y2="20" stroke="#7A9E7E" stroke-width="1.4" stroke-linecap="round" opacity="0.35"/>
+  <circle cx="36" cy="48" r="3.5" fill="#7A9E7E"/>
+</svg></span>
+      <span class="flex flex-col leading-none">
+        <span class="font-display tracking-tight text-[15px] text-ink" style="font-weight:700;letter-spacing:-0.03em;">VYOMARYX</span>
+        <span class="eyebrow text-[9px] text-ink-soft mt-0.5">AEROSPACE</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-9">
+      <a href="index.html" class="eyebrow text-ink-soft hover:text-ink transition-colors">Home</a>
+      <a href="services.html" class="eyebrow text-ink-soft hover:text-ink transition-colors">Capabilities</a>
+      <a href="about.html" class="eyebrow text-ink-soft hover:text-ink transition-colors">About</a>
+      <a href="contact.html" class="eyebrow inline-flex items-center gap-2 border border-ink px-4 py-2 bg-ink text-paper" aria-current="page">Contact</a>
+    </div>
+    <button id="navToggle" class="md:hidden w-10 h-10 -mr-2 flex flex-col items-center justify-center gap-[5px]" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center"></span><span class="block w-6 h-px bg-ink transition-all duration-300"></span><span class="block w-6 h-px bg-ink transition-all duration-300 origin-center"></span>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-line bg-paper">
+    <div class="px-5 py-4 flex flex-col gap-1">
+      <a href="index.html" class="eyebrow py-3 text-ink-soft border-b border-line/60">Home</a>
+      <a href="services.html" class="eyebrow py-3 text-ink-soft border-b border-line/60">Capabilities</a>
+      <a href="about.html" class="eyebrow py-3 text-ink-soft border-b border-line/60">About</a>
+      <a href="contact.html" class="eyebrow py-3 text-ink">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="relative pt-32 sm:pt-40 pb-12 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none [mask-image:linear-gradient(black,transparent)]"></div>
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-signal mb-6 flex items-center gap-3"><span class="inline-block w-2 h-2 rounded-full bg-signal"></span>Contact</p>
+    <h1 class="font-display text-ink leading-[1.0] tracking-tight max-w-4xl" style="font-weight:700;font-size:clamp(2.4rem,5.6vw,4.6rem);">Start a conversation.</h1>
+    <p class="mt-6 max-w-2xl text-lg text-ink-soft leading-relaxed">Briefings, demonstrations, partnerships, or procurement — tell us what you need and the right person will respond.</p>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-5 sm:px-8 pb-16 sm:pb-24">
+  <div class="grid lg:grid-cols-12 border border-ink">
+    <!-- Form -->
+    <div class="lg:col-span-7 p-6 sm:p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-line">
+      <form id="contactForm" novalidate class="reveal in">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="flex flex-col gap-2">
+            <label for="name" class="eyebrow text-ink-soft">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your full name" class="field px-4 py-3" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="email" class="eyebrow text-ink-soft">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@organisation.in" class="field px-4 py-3" />
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 mt-5">
+          <label for="reason" class="eyebrow text-ink-soft">Reason for contact</label>
+          <select id="reason" name="reason" required class="field px-4 py-3">
+            <option value="" disabled selected>Select a reason…</option>
+            <option>General enquiry</option>
+            <option>Capability briefing / demo</option>
+            <option>Partnership</option>
+            <option>Procurement / tender</option>
+            <option>Careers</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-2 mt-5">
+          <label for="message" class="eyebrow text-ink-soft">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell us about your mission, platform, or requirement." class="field px-4 py-3 resize-y"></textarea>
+        </div>
+        <button type="submit" class="group mt-7 inline-flex items-center gap-3 bg-ink text-paper px-7 py-4 eyebrow hover:bg-signal transition-colors duration-300">
+          Send message <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </button>
+        <p class="eyebrow text-ink-soft mt-4 leading-relaxed">Demo form — submissions are handled in-browser. Connect it to your own backend or a service like Formspree to receive messages.</p>
+      </form>
+
+      <!-- Success state -->
+      <div id="formSuccess" class="hidden reveal in py-6">
+        <div class="w-12 h-12 rounded-full border border-signal flex items-center justify-center text-signal text-xl">✓</div>
+        <h2 class="font-display text-2xl text-ink mt-5" style="font-weight:600;">Message ready to send.</h2>
+        <p class="text-ink-soft mt-3 max-w-md leading-relaxed">Thanks — your details validated successfully. Once this form is wired to your backend, the message will reach the Vyomaryx team here.</p>
+      </div>
+    </div>
+
+    <!-- Contact details + map -->
+    <div class="lg:col-span-5 flex flex-col">
+      <div class="p-6 sm:p-10 lg:p-12 border-b border-line">
+        <div class="eyebrow text-signal mb-5">Direct lines</div>
+        <dl class="space-y-5">
+          <div><dt class="eyebrow text-ink-soft text-[10px]">Email</dt><dd class="font-mono text-ink mt-1">info@vyomaryxaerospace.in</dd></div>
+          <div><dt class="eyebrow text-ink-soft text-[10px]">Phone</dt><dd class="font-mono text-ink mt-1">+91 00000 00000</dd></div>
+          <div><dt class="eyebrow text-ink-soft text-[10px]">Headquarters</dt><dd class="font-mono text-ink mt-1 leading-relaxed">Hyderabad<br>Telangana · India</dd></div>
+        </dl>
+      </div>
+      <div class="relative flex-1 min-h-[260px]">
+        <iframe
+          title="Vyomaryx Aerospace headquarters location, Hyderabad"
+          class="map-frame absolute inset-0 w-full h-full"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=78.4367%2C17.3350%2C78.5367%2C17.4350&layer=mapnik&marker=17.3850%2C78.4867">
+        </iframe>
+        <span class="absolute top-3 left-3 eyebrow bg-paper/90 text-ink px-2 py-1 border border-line pointer-events-none">17.3850° N · 78.4867° E</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="site.js"></script>
+</body>
+</html>
