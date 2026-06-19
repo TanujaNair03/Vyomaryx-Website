@@ -66,7 +66,7 @@
             '<div class="eyebrow text-ink-soft mb-4">Navigate</div>' +
             '<ul class="space-y-2.5 text-sm">' +
               '<li><a class="link-underline text-ink pb-0.5" href="index.html">Home</a></li>' +
-              '<li><a class="link-underline text-ink pb-0.5" href="services.html">Capabilities</a></li>' +
+              '<li><a class="link-underline text-ink pb-0.5" href="services.html">Focus Areas</a></li>' +
               '<li><a class="link-underline text-ink pb-0.5" href="about.html">About</a></li>' +
               '<li><a class="link-underline text-ink pb-0.5" href="contact.html">Contact</a></li>' +
             '</ul>' +
