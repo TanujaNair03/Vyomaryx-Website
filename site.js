@@ -1,4 +1,4 @@
-/* Vyomaryx Aerospace — shared interactions */
+/* Vyomaryx Aerospace - shared interactions */
 (function () {
   /* ---------- Mobile nav ---------- */
   var toggle = document.getElementById('navToggle');
@@ -57,10 +57,9 @@
       '<footer class="border-t border-line bg-paper">' +
         '<div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid gap-10 md:grid-cols-12">' +
           '<div class="md:col-span-5">' +
-            '<div class="flex items-center gap-3 mb-4">'+'<span style="display:block;width:44px;height:30px;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56" fill="none"><line x1="0" y1="20" x2="20" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/><line x1="20" y1="20" x2="36" y2="48" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/><line x1="36" y1="48" x2="52" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/><line x1="52" y1="20" x2="64" y2="10" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/><line x1="64" y1="10" x2="72" y2="20" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/><circle cx="36" cy="48" r="3.5" fill="#7A9E7E"/></svg></span>'+'<span class="font-display text-ink tracking-tight text-sm" style="font-weight:700;">VYOMARYX</span>' +
-              '<span style="display:block;width:44px;height:30px;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56" fill="none"><line x1="0" y1="20" x2="20" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/><line x1="20" y1="20" x2="36" y2="48" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/><line x1="36" y1="48" x2="52" y2="20" stroke="#1A1714" stroke-width="2.8" stroke-linecap="round"/><line x1="52" y1="20" x2="64" y2="10" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/><line x1="64" y1="10" x2="72" y2="20" stroke="#7A9E7E" stroke-width="2.8" stroke-linecap="round"/><circle cx="36" cy="48" r="3.5" fill="#7A9E7E"/></svg></span>' +
+            '<div class="flex items-center gap-3 mb-4">'+'<span style="display:block;width:36px;height:36px;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none"><text x="40" y="68" font-family="Times New Roman, Georgia, serif" font-weight="700" font-size="74" fill="#16130E" text-anchor="middle">V</text><path d="M40,40 L32,26 L40,31 L48,26 Z" fill="#FFFFFF"/><g><rect x="35.5" y="9" width="9" height="8" rx="1.4" fill="#16130E"/><g stroke="#16130E" stroke-width="2.4" stroke-linecap="round"><line x1="37" y1="11" x2="28" y2="5"/><line x1="43" y1="11" x2="52" y2="5"/><line x1="37" y1="15" x2="29" y2="20"/><line x1="43" y1="15" x2="51" y2="20"/></g></g></svg></span>'+'<span class="font-display text-ink tracking-tight text-sm" style="font-weight:700;">VYOMARYX</span>' +
             '</div>' +
-            '<p class="text-ink-soft mt-4 max-w-xs leading-relaxed">Deep-tech autonomy for uncrewed aerial systems. Engineered in India for the Army, Navy, and Air Force.</p>' +
+            '<p class="text-ink-soft mt-4 max-w-xs leading-relaxed">Autonomous uncrewed systems for allied and democratic forces. Sovereign by design.</p>' +
           '</div>' +
           '<div class="md:col-span-3">' +
             '<div class="eyebrow text-ink-soft mb-4">Navigate</div>' +
@@ -73,12 +72,12 @@
           '</div>' +
           '<div class="md:col-span-4">' +
             '<div class="eyebrow text-ink-soft mb-4">Contact</div>' +
-            '<p class="font-mono text-sm text-ink leading-relaxed">info@vyomaryxaerospace.in<br>+91 00000 00000<br>Hyderabad · Telangana · IN</p>' +
+            '<p class="font-mono text-sm text-ink leading-relaxed">tanuja@vyomaryxaerospace.in<br>Hyderabad · Telangana · IN</p>' +
           '</div>' +
         '</div>' +
         '<div class="border-t border-line">' +
           '<div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row gap-2 justify-between eyebrow text-ink-soft">' +
-            '<span>© <span id="yr"></span> Vyomaryx Aerospace · Placeholder content</span>' +
+            '<span>© <span id="yr"></span> Vyomaryx Aerospace</span>' +
             '<span class="text-signal">17.3850° N&nbsp;&nbsp;78.4867° E</span>' +
           '</div>' +
         '</div>' +
