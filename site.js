@@ -59,7 +59,7 @@
           '<div class="md:col-span-5">' +
             '<div class="flex items-center gap-3 mb-4">'+'<span style="display:block;width:36px;height:36px;flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none"><text x="40" y="68" font-family="Times New Roman, Georgia, serif" font-weight="700" font-size="74" fill="#16130E" text-anchor="middle">V</text><path d="M40,40 L32,26 L40,31 L48,26 Z" fill="#FFFFFF"/><g><rect x="35.5" y="9" width="9" height="8" rx="1.4" fill="#16130E"/><g stroke="#16130E" stroke-width="2.4" stroke-linecap="round"><line x1="37" y1="11" x2="28" y2="5"/><line x1="43" y1="11" x2="52" y2="5"/><line x1="37" y1="15" x2="29" y2="20"/><line x1="43" y1="15" x2="51" y2="20"/></g></g></svg></span>'+'<span class="font-display text-ink tracking-tight text-sm" style="font-weight:700;">VYOMARYX</span>' +
             '</div>' +
-            '<p class="text-ink-soft mt-4 max-w-xs leading-relaxed">Autonomous uncrewed systems for allied and democratic forces. Sovereign by design.</p>' +
+            '<p class="text-ink-soft mt-4 max-w-xs leading-relaxed">Autonomous uncrewed systems for modern armed forces. Sovereign by design.</p>' +
           '</div>' +
           '<div class="md:col-span-3">' +
             '<div class="eyebrow text-ink-soft mb-4">Navigate</div>' +
